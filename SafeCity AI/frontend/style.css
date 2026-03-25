@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Map */
+#map {
+    height: 220px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* Inputs */
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* Search box special */
+#search {
+    width: 100%;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+/* Result */
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Suggestions dropdown */
+#suggestions {
+    position: absolute;
+    width: 100%;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: -5px;
+    text-align: left;
+}
+
+#suggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background: lightgray;
+}
