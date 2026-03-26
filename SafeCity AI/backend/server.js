@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 
-// 👉 Import AI logic
+//  Import AI logic
 const { getPrediction } = require('./model/predictor');
 
 app.use(cors());
@@ -12,12 +12,12 @@ app.use(express.json());
 app.post('/predict', (req, res) => {
     const { area, time, previousCrime, populationDensity } = req.body;
 
-    // ✅ Validation
+    //  Validation
     if (!area || !time) {
         return res.status(400).json({ error: "Area and time are required" });
     }
 
-    // ✅ Clean input
+    // Clean input
     const inputData = {
         area,
         time,
@@ -27,10 +27,10 @@ app.post('/predict', (req, res) => {
 
     console.log("Prediction Request:", inputData);
 
-    // 👉 Use model
+    // Use model
     const result = getPrediction(inputData);
 
-    // 👉 Add smart action (frontend + backend both strong)
+    
     let action = "Normal Monitoring";
     let reason = [];
 
@@ -53,5 +53,5 @@ app.post('/predict', (req, res) => {
 
 // ✅ Server start
 app.listen(4000, () => {
-    console.log("🚀 Server running on http://localhost:4000");
+    console.log(" Server running on http://localhost:4000");
 });
