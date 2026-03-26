@@ -64,6 +64,8 @@ button:hover {
 #result {
     margin-top: 10px;
     font-weight: bold;
+    color: rgb(242, 16, 16);
+    text-shadow: 1px 1px 5px black;
 }
 
 /* Suggestions dropdown */
