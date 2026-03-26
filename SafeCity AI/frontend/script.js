@@ -12,7 +12,7 @@ map.on('click', function(e) {
     marker = L.marker(e.latlng).addTo(map);
 });
 
-// 📍 Auto Location
+//  Auto Location
 navigator.geolocation.getCurrentPosition((pos) => {
     const lat = pos.coords.latitude;
     const lon = pos.coords.longitude;
@@ -21,13 +21,13 @@ navigator.geolocation.getCurrentPosition((pos) => {
     L.marker([lat, lon]).addTo(map);
 });
 
-// 🔥 Heat Zone
+//  Heat Zone
 L.circle([28.61, 77.23], {
     color: 'red',
     radius: 500
 }).addTo(map);
 
-// 🔮 PREDICT FUNCTION
+// PREDICT FUNCTION
 async function predict() {
     const area = document.getElementById('area').value;
     const time = document.getElementById('time').value;
@@ -58,7 +58,7 @@ Reason: ${data.reason}`;
         document.getElementById('action').innerText =
         `Action: ${data.action}`;
 
-        // 🔥 EXTRA SAFETY MESSAGE
+        //  EXTRA SAFETY MESSAGE
         if (data.risk > 70) {
             document.getElementById('action').innerText += "\nAvoid this area at night 🚫";
             document.body.style.background = "#ffcccc";
@@ -74,7 +74,7 @@ Reason: ${data.reason}`;
     }
 }
 
-// 🔍 SEARCH LOCATION
+//  SEARCH LOCATION
 async function searchLocation() {
     const query = document.getElementById('search').value;
 
@@ -96,7 +96,7 @@ async function searchLocation() {
     }
 }
 
-// 🔎 SUGGESTIONS
+//  SUGGESTIONS
 async function getSuggestions() {
     const query = document.getElementById('search').value;
 
@@ -119,7 +119,7 @@ async function getSuggestions() {
     document.getElementById('suggestions').innerHTML = list;
 }
 
-// 📍 SELECT LOCATION
+//  SELECT LOCATION
 function selectLocation(lat, lon, name) {
     lat = Number(lat);
     lon = Number(lon);
@@ -135,7 +135,7 @@ function selectLocation(lat, lon, name) {
     predict(); // auto predict
 }
 
-// ⌨️ ENTER KEY SUPPORT
+// ENTER KEY SUPPORT
 document.getElementById("search").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         const first = document.querySelector("#suggestions li");
