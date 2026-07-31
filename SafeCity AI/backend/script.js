@@ -61,11 +61,11 @@ Reason: ${data.reason}`;
         //  EXTRA SAFETY MESSAGE
         if (data.risk > 70) {
             document.getElementById('action').innerText += "\nAvoid this area at night 🚫";
-            document.body.style.background = "#ffcccc";
+            document.body.style.background = "#D90000";
         } else if (data.risk > 40) {
-            document.body.style.background = "#fff3cd";
+            document.body.style.background = "#FB6C00";
         } else {
-            document.body.style.background = "#d4edda";
+            document.body.style.background = "#769826";
         }
 
     } catch (err) {
