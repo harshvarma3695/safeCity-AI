@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Crime Predictor</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+
+  <body>
+    <div class="container">
+    <h2>🚨 SafetyCity AI - Crime Risk Predictor</h2>
+
+      <div id="map"></div>
+
+      <!-- Search -->
+      <input
+        type="text"
+        id="search"
+        placeholder="Search location..."
+        onkeyup="getSuggestions()"
+      />
+      <ul id="suggestions"></ul>
+
+      <!-- Area -->
+      <select id="area">
+        <option value="urban">Urban</option>
+        <option value="rural">Rural</option>
+      </select>
+
+      <!-- Time -->
+      <select id="time">
+        <option value="day">Day</option>
+        <option value="night">Night</option>
+      </select>
+
+      <!-- Crime -->
+      <input type="number" id="crime" placeholder="Previous Crime %" />
+
+      <!-- Population -->
+      <input type="number" id="population" placeholder="Population Density %" />
+
+      <button onclick="predict()">Check Risk</button>
+
+    
+      <h3 id="result"></h3>
+<p id="action" style="font-size:14px;"></p>
+      
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
